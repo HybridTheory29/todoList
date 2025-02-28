@@ -55,10 +55,12 @@ def user_profile(request, username):
 
     return render(request, 'main/user_profile.html', context)
 
+"""
 def lists(request):
     categories = Category.objects.all()
 
     return render(request, 'main/lists.html', {'categories': categories})
+"""
 
 class CategoryList(LoginRequiredMixin, ListView):
     model = Category
