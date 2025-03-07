@@ -36,21 +36,19 @@
     {% for task in tasks %}
         <div class="task-wrapper">
             {% if task.complete %}
+                <div class="task-complete-icon"></div>
                 <div class="task-title">
-                    <div class="task-complete-icon">
-                        <s><a class="task-name" href="{% url 'task-update' category.id task.id %}">{{ task }}</a></s>
-                    </div>
+                    <s style="color:black;"><a style="text-decoration: none; color: #fff;" href="{% url 'task-update' category.id task.id %}">{{ task }}</a></s>
                 </div>
-                <a class="complete-link" href="{% url 'task-complete' category.id task.id %}"><i class='bx bx-check-double' ></i></a>
+                <a class="complete-link" href="{% url 'task-complete' category.id task.id %}"><i class='bx bx-check' ></i></a>
             {% else %}
+                <div class="task-incomplete-icon"></div>
                 <div class="task-title">
-                    <div class="task-incomplete-icon">
-                        <a class="task-name" href="{% url 'task-update' category.id task.id %}">{{ task }}</a>
-                    </div>
+                    <a style="text-decoration: none; color: #fff;" href="{% url 'task-update' category.id task.id %}">{{ task }}</a>
                 </div>
                 <a class="complete-link" href="{% url 'task-complete' category.id task.id %}"><i class='bx bx-check' ></i></a>
             {% endif %}
-            <span class="create-date-desktop">{{ category.created_at|date:'d.m.y H:i' }}</span>
+            <span class="desktop-date">{{ category.created_at|date:'d.m.y H:i' }}</span>
             {% if task.important %}
                 <a class="imp-butt" href="{% url 'important-item' category.id task.id %}"><i class='bx bxs-star'></i></a>
             {% else %}

@@ -25,7 +25,7 @@ class Category(models.Model):
 class Task(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='tasks', default=1)
     user =  models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    title = models.CharField(max_length=22, null=True, blank=True, verbose_name=u"Заголовок", default="")
+    title = models.CharField(max_length=50, null=True, blank=True, verbose_name=u"Заголовок", default="")
     description = models.TextField(null=True, blank=True, verbose_name=u"Описание", default="")
     complete =  models.BooleanField(default=False, verbose_name=u"Состояние")
     important = models.BooleanField(default=False)

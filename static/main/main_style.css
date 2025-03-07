@@ -67,24 +67,8 @@
         color: #fff;
         padding: 20px 20px;
     }
-    .task-wrapper .task-title .task-name{
-        text-decoration: none;
-        color: #fff;
-        position: absolute;
-        left: 55px;
-        top: 37%;
-    }
-    .task-wrapper .task-title .desktop{
-        visibility: visible;
-        margin-left: 22px;
-        text-decoration: none;
-        color: #fff;
-        white-space: nowrap;
-        display: inline-block;
-        flex-grow: 1;
-    }
-    .task-wrapper .task-title .mobile{
-        display: none;
+    .task-wrapper .task-title{
+        width:630px; overflow: auto; position: absolute; left: 55px; top: 26px;
     }
     .task-wrapper .task-complete-icon{
         height: 20px;
@@ -104,6 +88,7 @@
         color: #cf4949;
         font-size: 27px;
         line-height: 0;
+        margin-left: 1584px;
     }
 
     .inimp-butt {
@@ -207,11 +192,9 @@
         -webkit-text-stroke: 0.5px black;
     }
 
-    .create-date-desktop {
-        visibility: visible;
-        position: absolute;
-        right: 46%;
-        color: #c5c5c5;
+    .desktop-date{
+        margin-top: 9px;
+        color: #e3e3e3;
     }
 
     .create-date-mobile {
@@ -223,7 +206,7 @@
 
     .counter {
         position: absolute;
-        left: 1.5%;
+        left: 2px;
         color: #c5c5c5;
     }
 }
@@ -287,37 +270,21 @@
         padding: 20px 20px;
     }
     .task-wrapper .task-title{
-        width: 10%;
-        display: flex;
-    }
-    .task-wrapper .task-title .task-name{
-        text-decoration: none;
-        color: #fff;
-        position: absolute;
-        left: 55px;
-        top: 25px;
-    }
-    .task-wrapper .task-title .desktop{
-        display: none;
-    }
-    .task-wrapper .task-title .mobile {
-        visibility: visible;
-        margin-left: 50%;
-        text-decoration: none;
-        color: #fff;
-        white-space: nowrap;
+        width:290px; overflow: auto; position: absolute; left: 50px; top: 27px;
     }
     .task-wrapper .task-complete-icon{
         height: 20px;
         width: 20px;
         background-color: rgb(105, 192, 105);
         border-radius: 50%;
+        margin-top: 5px;
     }
     .task-wrapper .task-incomplete-icon{
         height: 20px;
         width: 20px;
         background-color: rgb(218, 218, 218);
         border-radius: 50%;
+        margin-top: 5px;
     }
     .delete-link {
         text-decoration: none;
@@ -427,10 +394,6 @@
         right: 98px;
         -webkit-text-stroke: 0.5px black;
     }
-
-    .create-date-desktop {
-        display: none;
-    }
     .create-date-mobile {
         visibility: visible;
         position: absolute;
@@ -444,6 +407,9 @@
         position: absolute;
         left: 5%;
         color: rgb(218, 218, 218);
+    }
+    .desktop-date{
+        display: none;
     }
   }
 
@@ -510,26 +476,9 @@
         overflow: hidden;
     }
     .task-wrapper .task-title{
-        width: 10%;
-        display: flex;
+        width:190px; overflow: auto; position: absolute; left: 50px; top: 27px;
     }
-    .task-wrapper .task-title .task-name{
-        text-decoration: none;
-        color: #fff;
-        position: absolute;
-        left: 15%;
-        top: 40%;
-    }
-    .task-wrapper .task-title .desktop{
-        display: none;
-    }
-    .task-wrapper .task-title .mobile {
-        visibility: visible;
-        margin-left: 50%;
-        text-decoration: none;
-        color: #fff;
-        white-space: nowrap;
-    }
+
     .task-wrapper .task-complete-icon{
         height: 20px;
         width: 20px;
@@ -653,7 +602,7 @@
         -webkit-text-stroke: 0.5px black;
     }
 
-    .create-date-mobile {
+    .task-wrapper .create-date-mobile {
         visibility: visible;
         position: absolute;
         top: 40%;
@@ -666,5 +615,8 @@
         position: absolute;
         left: 5%;
         color: rgb(218, 218, 218);
+    }
+    .desktop-date{
+        display:none;
     }
 }

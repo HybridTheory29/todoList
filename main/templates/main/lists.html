@@ -32,12 +32,17 @@
     <div>
         {% for category in categories %}
             <div class="task-wrapper">
+                
+                
                 <div class="task-title">
+                    <a style="text-decoration: none; color: #fff;" href="{{ category.get_absolute_url }}"><span class="counter">{{ forloop.counter }}.</span>   {{ category }}</a>
+                </div>
+                <!--<div class="task-title">
                     <a class="desktop"href="{{ category.get_absolute_url }}"><span class="counter">{{ forloop.counter }}.</span> {{ category }}</a>
                     <a class="mobile" href="{{ category.get_absolute_url }}"><span class="counter">{{ forloop.counter }}.</span> категория</a>
                     <span class="create-date-mobile">{{ category.created_at|date:'d.m.y' }}</span>
                     <span class="create-date-desktop">{{ category.created_at|date:'d.m.y H:i' }}</span>
-                </div>
+                </div>-->
                 <a class="edit-link" href="{% url 'category-update' category.pk %}"><i class='bx bx-edit-alt'></i></a>
                 {% if category.important %}
                     <a class="imp-butt" href="{% url 'category-important' category.pk %}"><i class='bx bxs-star'></i></a>
