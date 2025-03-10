@@ -476,7 +476,7 @@
         overflow: hidden;
     }
     .task-wrapper .task-title{
-        width:190px; overflow: auto; position: absolute; left: 50px; top: 27px;
+        width:190px; overflow: auto; position: absolute; left: 40px; top: 27px;
     }
 
     .task-wrapper .task-complete-icon{
@@ -613,7 +613,7 @@
     }
     .counter {
         position: absolute;
-        left: 5%;
+        left: 20px; top: 27px;
         color: rgb(218, 218, 218);
     }
     .desktop-date{
