@@ -34,8 +34,9 @@
             <div class="task-wrapper">
                 
                 
-                <div class="task-title">
-                    <a style="text-decoration: none; color: #fff;" href="{{ category.get_absolute_url }}"><span class="counter">{{ forloop.counter }}.</span>   {{ category }}</a>
+                <div>
+                    <span class="counter">{{ forloop.counter }}.</span>
+                    <a class="task-title" style="text-decoration: none; color: #fff;" href="{{ category.get_absolute_url }}"> {{ category }}</a>
                 </div>
                 <!--<div class="task-title">
                     <a class="desktop"href="{{ category.get_absolute_url }}"><span class="counter">{{ forloop.counter }}.</span> {{ category }}</a>

@@ -68,7 +68,7 @@
         padding: 20px 20px;
     }
     .task-wrapper .task-title{
-        width:630px; overflow: auto; position: absolute; left: 55px; top: 26px;
+        width:630px; overflow: auto; position: absolute; left: 40px; top: 26px;
     }
     .task-wrapper .task-complete-icon{
         height: 20px;
@@ -206,7 +206,7 @@
 
     .counter {
         position: absolute;
-        left: 2px;
+        left: 20px; top: 26px;
         color: #c5c5c5;
     }
 }
