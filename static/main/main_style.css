@@ -12,8 +12,8 @@
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
-        margin-left: 100px;
-        margin-right: 100px;
+        /*margin-left: 100px;
+        margin-right: 100px;*/
         margin-top: 30px;
         overflow-y: scroll;
     }
@@ -405,7 +405,8 @@
     }
     .counter {
         position: absolute;
-        left: 5%;
+        left: 20px;
+        top: 28px;
         color: rgb(218, 218, 218);
     }
     .desktop-date{
