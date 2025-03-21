@@ -156,6 +156,9 @@
         text-decoration: none;
         position: absolute; top: 53%; left: 22%;
     }
+    .mobile_create-date{
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
@@ -316,4 +319,9 @@
         width: 150px;
     }
 
+    .mobile_create-date{
+        position: absolute;
+        top: 15px;
+        left: 71%;
+    }
 }

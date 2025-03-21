@@ -32,7 +32,7 @@
     <a id="add-link" href="{% url 'task-create' category.id %}"><i class='bx bx-plus-circle'></i></a>
 </div>
 
-<div class="task-items-wrapper">
+<div>
     {% for task in tasks %}
         <div class="task-wrapper">
             {% if task.complete %}
@@ -42,13 +42,11 @@
                 </div>
                 <a class="complete-link" href="{% url 'task-complete' category.id task.id %}"><i class='bx bx-check' ></i></a>
             {% else %}
-                <div class="task-incomplete-icon"></div>
-                <div class="task-title">
-                    <a style="text-decoration: none; color: #fff;" href="{% url 'task-update' category.id task.id %}">{{ task }}</a>
-                </div>
+                <span class="task-incomplete-icon"></span>
+                <a class="task-title" style="text-decoration: none; color: #fff;" href="{% url 'task-update' category.id task.id %}">{{ task }}</a>
                 <a class="complete-link" href="{% url 'task-complete' category.id task.id %}"><i class='bx bx-check' ></i></a>
             {% endif %}
-            <span class="desktop-date">{{ category.created_at|date:'d.m.y H:i' }}</span>
+            <span class="desktop-date">{{ task.created_at|date:'d.m.y H:i' }}</span>
             {% if task.important %}
                 <a class="imp-butt" href="{% url 'important-item' category.id task.id %}"><i class='bx bxs-star'></i></a>
             {% else %}

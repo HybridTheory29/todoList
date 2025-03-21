@@ -16,6 +16,7 @@
             <textarea class="titl" name="title" placeholder="Заголовок" required>{{ form.title.value }}</textarea>
             <textarea class="descript" name="description" placeholder="Введите описание...">{{ form.description.value }}</textarea> 
             <input class="button" type="submit" value="Подтвердить">
+            <span class="mobile_create-date">{{ task.created_at|date:'d.m.y H:i' }}</span>
         </form>
     </div>
 </body>

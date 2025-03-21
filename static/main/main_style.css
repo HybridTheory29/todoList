@@ -5,15 +5,15 @@
     font-family: "Balsamiq Sans", serif;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 480px) {
     body{
         min-height: 90vh;
-        background: url("back.jpg") no-repeat;
+        background: url("back1.jpg") no-repeat;
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
-        /*margin-left: 100px;
-        margin-right: 100px;*/
+        margin-left: 100px;
+        margin-right: 100px;
         margin-top: 30px;
         overflow-y: scroll;
     }
@@ -68,19 +68,23 @@
         padding: 20px 20px;
     }
     .task-wrapper .task-title{
-        width:630px; overflow: auto; position: absolute; left: 40px; top: 26px;
+        width:630px; overflow: auto; position: absolute; left: 48px; top: 26px;
     }
     .task-wrapper .task-complete-icon{
         height: 20px;
         width: 20px;
         background-color: rgb(105, 192, 105);
         border-radius: 50%;
+        position: absolute;
+        top:24px;
     }
     .task-wrapper .task-incomplete-icon{
         height: 20px;
         width: 20px;
         background-color: rgb(218, 218, 218);
         border-radius: 50%;
+        position: absolute;
+        top:24px;
     }
     .delete-link {
         text-decoration: none;
@@ -88,18 +92,19 @@
         color: #cf4949;
         font-size: 27px;
         line-height: 0;
-        margin-left: 1584px;
+        margin-right: 2px;
+        -webkit-text-stroke: 0.5px black;
     }
 
     .inimp-butt {
         text-decoration: none;
-        color: #333;
+        color: #707070;
         font-size: 23px;
         line-height: 0;
         position: absolute;
-        right: 60px;
+        right: 70px;
         top: 21px;
-        -webkit-text-stroke: 0.5px black;
+        -webkit-text-stroke: 0.3px black;
     }
 
 
@@ -184,24 +189,19 @@
 
     .edit-link {
         text-decoration: none;
-        color: #644d2a;
+        color: #856644;
         font-size: 23px;
         line-height: 0;
         position: absolute;
-        right: 98px;
+        right: 115px;
         -webkit-text-stroke: 0.5px black;
     }
 
     .desktop-date{
-        margin-top: 9px;
-        color: #e3e3e3;
-    }
-
-    .create-date-mobile {
-        display: none;
         position: absolute;
-        right: 45%;
-        background-color: rgb(218, 218, 218);
+        top: 28px;
+        left: 47%;
+        color: rgb(218, 218, 218);
     }
 
     .counter {
@@ -210,209 +210,6 @@
         color: #c5c5c5;
     }
 }
-
-@media (max-width: 768px) {
-    body{
-        min-height: 90vh;
-        background: url("back.jpg") no-repeat;
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-    }
-
-    .header-bar{
-        display: flex;
-        justify-content: space-between;
-        border-top: 2px solid rgb(255, 255, 255, .2);
-        border-left: 2px solid rgb(255, 255, 255, .2);
-        border-right: 2px solid rgb(255, 255, 255, .2);
-        background: #6F97A3;
-        background: linear-gradient(135deg, #6F97A3, #385BB1);
-        box-shadow: 0 0 10px rgb(0, 0, 0, .2);
-        color: #f2e9e9;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        padding: 15px 20px;
-    }
-    .header-bar a{
-        color: rgb(218, 218, 218);
-        text-decoration: none;
-        font-weight: 600;
-    }
-    .header-bar .categoriee{
-        position: absolute;
-        right: 170px;
-        color: rgb(218, 218, 218);
-    }
-    .header-bar a:hover{
-        text-decoration: underline;
-    }
-    .header-bar .zametki{
-        position: absolute; right: 22%
-    }
-    .header-bar .account{
-        position: absolute;
-        right: 90px;
-        color: rgb(218, 218, 218);
-    }
-
-    .task-wrapper{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background: transparent;
-        border-left: 2px solid rgb(255, 255, 255, .2);
-        border-right: 2px solid rgb(255, 255, 255, .2);
-        border-bottom: 2px solid rgb(255, 255, 255, .2);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 0 10px rgb(0, 0, 0, .2);
-        color: #fff;
-        padding: 20px 20px;
-    }
-    .task-wrapper .task-title{
-        width:290px; overflow: auto; position: absolute; left: 50px; top: 27px;
-    }
-    .task-wrapper .task-complete-icon{
-        height: 20px;
-        width: 20px;
-        background-color: rgb(105, 192, 105);
-        border-radius: 50%;
-        margin-top: 5px;
-    }
-    .task-wrapper .task-incomplete-icon{
-        height: 20px;
-        width: 20px;
-        background-color: rgb(218, 218, 218);
-        border-radius: 50%;
-        margin-top: 5px;
-    }
-    .delete-link {
-        text-decoration: none;
-        font-weight: 900;
-        color: #cf4949;
-        font-size: 27px;
-        line-height: 0;
-    }
-
-    .inimp-butt {
-        text-decoration: none;
-        color: #333;
-        font-size: 23px;
-        line-height: 0;
-        position: absolute;
-        right: 60px;
-        top: 21px;
-        -webkit-text-stroke: 0.5px black;
-    }
-
-
-    .imp-butt {
-        text-decoration: none;
-        color: #e1ea25;
-        font-size: 23px;
-        line-height: 0;
-        position: absolute;
-        right: 60px;
-        top: 21px;
-        -webkit-text-stroke: 1.2px black;
-    }
-
-    .complete-link {
-        text-decoration: none;
-        color: #29d810;
-        font-size: 35px;
-        line-height: 0;
-        position: absolute;
-        right: 93px;
-        top: 16px;
-        -webkit-text-stroke: 1px black;
-    }
-    #search-add-wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-right: 2px solid rgb(255, 255, 255, .2);
-        border-left: 2px solid rgb(255, 255, 255, .2);
-        border-bottom: 2px solid rgb(255, 255, 255, .2);
-        background: #6F97A3;
-        background: linear-gradient(135deg, #6F97A3, #385BB1);
-        box-shadow: 0 0 10px rgb(0, 0, 0, .2);
-        color: #fff;
-        padding: 15px 20px;
-    }
-    #search-add-wrapper .search-form{
-        border: 1.5px solid rgb(255, 255, 255, .2);
-        display: inline-flex;
-        justify-content: space-between;
-        align-items: center;
-        line-height: 0;
-        border-radius: 5px;
-    }
-    .search-area{
-        border: none;
-        width: 150px;
-        outline: none;
-        font-size: 15px;
-        padding: 0 10px;
-        background-color: #7a7a7a;
-        height: 25px;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-    }
-    #search-add-wrapper input::placeholder{
-        color: #333;
-    }
-    #search-add-wrapper button{
-        border: none;
-        height: 25px;
-        background-color: #7a7a7a;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-    }
-    #search-add-wrapper .button i{
-        display: flex;
-        justify-content: center;
-        line-height: 0;
-        font-size: 15px;
-    }
-
-    #add-link {
-        color: #fff;
-        text-decoration: none;
-        font-size: 33px;
-        -webkit-text-stroke: 0.7px black;
-        margin-right: 14px;
-        line-height: 0; 
-    }
-
-    .edit-link {
-        text-decoration: none;
-        color: #644d2a;
-        font-size: 23px;
-        line-height: 0;
-        position: absolute;
-        right: 98px;
-        -webkit-text-stroke: 0.5px black;
-    }
-    .create-date-mobile {
-        visibility: visible;
-        position: absolute;
-        top: 40%;
-        right: 42%;
-        color: rgb(218, 218, 218);
-        font-weight: 500;
-        font-size: 17px;
-    }
-    .counter {
-        position: absolute;
-        left: 20px;
-        top: 28px;
-        color: rgb(218, 218, 218);
-    }
-    .desktop-date{
-        display: none;
-    }
-  }
 
 @media (max-width: 480px) {
     body{
@@ -485,14 +282,14 @@
         width: 20px;
         background-color: rgb(105, 192, 105);
         border-radius: 50%;
-        margin-top: 5px;
+        margin-top: 5px; margin-left: -5px;
     }
     .task-wrapper .task-incomplete-icon{
         height: 20px;
         width: 20px;
         background-color: rgb(218, 218, 218);
         border-radius: 50%;
-        margin-top: 5px;
+        margin-top: 5px; margin-left: -5px;
     }
     .delete-link {
         text-decoration: none;
@@ -500,17 +297,18 @@
         color: #cf4949;
         font-size: 27px;
         line-height: 0;
+        -webkit-text-stroke: 0.3px black;
     }
 
     .inimp-butt {
         text-decoration: none;
-        color: #333;
+        color: #707070;
         font-size: 23px;
         line-height: 0;
         position: absolute;
         right: 60px;
         top: 21px;
-        -webkit-text-stroke: 0.5px black;
+        -webkit-text-stroke: 0.3px black;
     }
 
 
@@ -595,22 +393,12 @@
 
     .edit-link {
         text-decoration: none;
-        color: #644d2a;
+        color: #856644;
         font-size: 23px;
         line-height: 0;
         position: absolute;
         right: 98px;
         -webkit-text-stroke: 0.5px black;
-    }
-
-    .task-wrapper .create-date-mobile {
-        visibility: visible;
-        position: absolute;
-        top: 40%;
-        right: 42%;
-        color: rgb(218, 218, 218);
-        font-weight: 500;
-        font-size: 17px;
     }
     .counter {
         position: absolute;

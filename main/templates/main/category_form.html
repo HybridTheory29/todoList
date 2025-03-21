@@ -15,6 +15,7 @@
             {% csrf_token %}
             <textarea class="ca-titl" name="name" placeholder="Заголовок" required>{{ form.name.value }}</textarea> 
             <input class="ca-button" type="submit" value="Подтвердить">
+            <span class="mobile_create-date">{{ category.created_at|date:'d.m.y H:i' }}</span>
         </form>
     </div>
 </body>
