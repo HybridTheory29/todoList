@@ -53,6 +53,7 @@
                 <a class="inimp-butt" href="{% url 'important-item' category.id task.id %}"><i class='bx bx-star' ></i></a>
             {% endif %}
             <a class="delete-link" href="{% url 'task-delete' category.id task.id %}"><i class='bx bx-x-circle'></i></a>
+            <!--ПРОБЛЕМА СО СТРАНИЦЕЙ, НЕ ПРАВИЛЬНО ОТОБРАЖАЮТСЯ ИКОНКИ-->
         </div>
     {% empty %}
     {% endfor %}
