@@ -36,7 +36,7 @@
     {% for task in tasks %}
         <div class="task-wrapper">
             {% if task.complete %}
-                <div class="task-complete-icon"></div>
+                <span class="task-complete-icon"></span>
                 <div class="task-title">
                     <s style="color:black;"><a style="text-decoration: none; color: #fff;" href="{% url 'task-update' category.id task.id %}">{{ task }}</a></s>
                 </div>
@@ -53,7 +53,6 @@
                 <a class="inimp-butt" href="{% url 'important-item' category.id task.id %}"><i class='bx bx-star' ></i></a>
             {% endif %}
             <a class="delete-link" href="{% url 'task-delete' category.id task.id %}"><i class='bx bx-x-circle'></i></a>
-            <!--ПРОБЛЕМА СО СТРАНИЦЕЙ, НЕ ПРАВИЛЬНО ОТОБРАЖАЮТСЯ ИКОНКИ-->
         </div>
     {% empty %}
     {% endfor %}

@@ -91,8 +91,9 @@
         font-weight: 900;
         color: #cf4949;
         font-size: 27px;
+
         line-height: 0;
-        margin-right: 2px;
+        margin-left: 98%;
         -webkit-text-stroke: 0.5px black;
     }
 
@@ -102,9 +103,9 @@
         font-size: 23px;
         line-height: 0;
         position: absolute;
-        right: 70px;
+        left: 94.5%;
         top: 21px;
-        -webkit-text-stroke: 0.3px black;
+        -webkit-text-stroke: 0.5px black;
     }
 
 
@@ -125,7 +126,8 @@
         font-size: 35px;
         line-height: 0;
         position: absolute;
-        right: 93px;
+        /*right: 93px;*/
+        left: 91.6%;
         top: 16px;
         -webkit-text-stroke: 1px black;
     }
@@ -308,7 +310,7 @@
         position: absolute;
         right: 60px;
         top: 21px;
-        -webkit-text-stroke: 0.3px black;
+        -webkit-text-stroke: 0.4px black;
     }
 
 
