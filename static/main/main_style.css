@@ -66,6 +66,7 @@
         box-shadow: 0 0 10px rgb(0, 0, 0, .2);
         color: #fff;
         padding: 20px 20px;
+        height: 68px;
     }
     .task-wrapper .task-title{
         width:630px; overflow: auto; position: absolute; left: 48px; top: 26px;
@@ -91,9 +92,8 @@
         font-weight: 900;
         color: #cf4949;
         font-size: 27px;
-
         line-height: 0;
-        margin-left: 98%;
+        position: absolute; right: 20px; top: 20px; 
         -webkit-text-stroke: 0.5px black;
     }
 
@@ -102,9 +102,7 @@
         color: #707070;
         font-size: 23px;
         line-height: 0;
-        position: absolute;
-        left: 94.5%;
-        top: 21px;
+        position: absolute; right: 72px; top: 21px;
         -webkit-text-stroke: 0.5px black;
     }
 
@@ -114,9 +112,7 @@
         color: #e1ea25;
         font-size: 23px;
         line-height: 0;
-        position: absolute;
-        right: 60px;
-        top: 21px;
+        position: absolute; right: 72px; top: 21px;
         -webkit-text-stroke: 1.2px black;
     }
 
@@ -125,10 +121,7 @@
         color: #29d810;
         font-size: 35px;
         line-height: 0;
-        position: absolute;
-        /*right: 93px;*/
-        left: 91.6%;
-        top: 16px;
+        position: absolute; right: 115px; top: 16px;
         -webkit-text-stroke: 1px black;
     }
     #search-add-wrapper {
@@ -194,8 +187,7 @@
         color: #856644;
         font-size: 23px;
         line-height: 0;
-        position: absolute;
-        right: 115px;
+        position: absolute; right: 120px; top: 22px;
         -webkit-text-stroke: 0.5px black;
     }
 

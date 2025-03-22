@@ -22,7 +22,7 @@
     
 
     .card-body{
-        min-height: 37vh;
+        height: 390px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -32,8 +32,7 @@
         box-shadow: 0 0 10px rgb(0, 0, 0, .2);
         color: #fff;
         border-radius: 10px;
-        width: 40%;
-
+        width: 700px;
     }
 
     .card-body a{
@@ -97,7 +96,7 @@
 
     .delete-body{
         min-height: 30vh;
-        width: 95%;
+        width: 700px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -112,7 +111,7 @@
     .delete-body p{
         position: absolute;
         top: -6px;
-        right: 35%;
+        left: 265px;
     }
     .delete-body a{
         position: absolute;
@@ -176,7 +175,7 @@
     }
 
     .card-body{
-        min-height: 37vh;
+        height: 350px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -260,7 +259,7 @@
         left: 17%;
         width: 64%;
         font-size: 16px;
-        height: 5vh;
+        height: 43px;
         resize: none;
     }
     .card-body .ca-button{
@@ -279,7 +278,7 @@
     }
 
     .delete-body{
-        min-height: 30vh;
+        height: 300px;
         width: 95%;
         display: flex;
         align-items: center;
