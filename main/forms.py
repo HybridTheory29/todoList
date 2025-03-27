@@ -4,7 +4,10 @@ from .models import *
 class CategoryForm(forms.ModelForm):
     class Meta:
         model = Task
-        fields = ['title', 'description']
+        fields = ['title', 'description', 'deadline']
+        widgets = {
+            'deadline': forms.DateInput(attrs={'type': 'date'}),
+        }
 
 class CreateCategoryForm(forms.ModelForm):
     class Meta:

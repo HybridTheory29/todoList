@@ -95,26 +95,11 @@ class CategoryTasks(ListView):
         context['search_input'] = search_input
 
         return context
-
-"""
-class NoteList(ListView):
-    model = Note
-    template_name = 'main/notes_list.html'
-    context_object_name = 'notes'
-
-    def get_queryset(self):
-        return Category.objects.filter(user=self.request.user)
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        return context
-"""
-        
+     
 class TaskCreate(LoginRequiredMixin, CreateView):
     model = Task
     template_name = 'main/task_form.html'
-    fields = ['title', 'description']
+    fields = ['title', 'description', 'deadline']
 
     def form_valid(self, form):
         category = Category.objects.get(pk=self.kwargs['category_id'])
@@ -149,7 +134,7 @@ class CategoryUpdateView(UpdateView):
 class TaskUpdateView(UpdateView):
     model = Task
     template_name = 'main/task_form.html'
-    fields = ['title', 'description']
+    fields = ['title', 'description', 'deadline']
 
     def form_valid(self, form):
         task = form.save(commit=False)

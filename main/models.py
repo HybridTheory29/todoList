@@ -31,6 +31,7 @@ class Task(models.Model):
     important = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
+    deadline = models.DateTimeField(verbose_name='Срок выполнения', blank=True, null=True)
 
     def __str__(self):
         return str(self.title)
