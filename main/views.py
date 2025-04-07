@@ -110,6 +110,7 @@ class TaskCreate(LoginRequiredMixin, CreateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['category'] = Category.objects.get(pk=self.kwargs['category_id'])
+        context['now'] = timezone.now()
         return context
 
     def get_success_url(self):

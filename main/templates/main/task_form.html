@@ -10,15 +10,18 @@
 </head>
 <body>
     <div class="card-body">
-        <a href="{% url 'category_tasks' category.id %}"><i class='bx bx-arrow-back'></i></i></a>
+        <a href="{% url 'category_tasks' category.id %}" class="back-link"><i class='bx bx-arrow-back'></i></a>
         <form method="POST" action="">
             {% csrf_token %}
             <textarea class="titl" name="title" placeholder="Заголовок" required>{{ form.title.value }}</textarea>
             <textarea class="descript" name="description" placeholder="Введите описание...">{{ form.description.value }}</textarea>
-            <textarea class="deadline" name="deadline">{{ form.deadline.value }}</textarea>
+            <div class="deadline-container">
+                <input type="datetime-local" name="deadline" 
+                       value="{{ form.deadline.value|date:'Y-m-d\TH:i' }}"
+                       min="{{ now|date:'Y-m-d\TH:i' }}"
+                       class="deadline-input">
+            </div>
             <input class="button" type="submit" value="Подтвердить">
-            <span class="mobile_create-date">{{ task.created_at|date:'d.m.y H:i' }}</span>
         </form>
-    </div>
 </body>
 </html>

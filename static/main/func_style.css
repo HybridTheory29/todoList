@@ -158,6 +158,16 @@
     .mobile_create-date{
         display: none;
     }
+    .deadline-container{
+        display: flex;
+        position: absolute;
+        top: 305px; right: 24%;
+    }
+    .deadline-input{
+        border: 2px solid #333;
+        border-radius: 5px;
+        font-size: 17px;
+    }
 }
 
 @media (max-width: 768px) {
