@@ -4,6 +4,7 @@ from django.db.models.signals import pre_save
 from django.dispatch import receiver
 from datetime import datetime
 from django.urls import reverse
+from django.utils import timezone
 
 class Category(models.Model):
     name = models.CharField(max_length=50, default="")
@@ -32,22 +33,17 @@ class Task(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
     deadline = models.DateTimeField(verbose_name='Срок выполнения', blank=True, null=True)
+    notified = models.BooleanField(default=False)
 
     def __str__(self):
         return str(self.title)
+    
+    @property
+    def is_overdue(self):
+        return not self.is_completed and self.deadline < timezone.now()
 
     class Meta:
         ordering = ['-important', 'complete']
-
-"""
-class Note(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    title = models.CharField(max_length=100, null=True, blank=True, default="")
-    text = models.TextField(null=True, blank=True, default="")
-
-    def __str__(self):
-        return str(self.title)
-"""
 
 class AuthUser(models.Model):
     login = models.CharField(max_length=100, unique=True)
@@ -68,6 +64,9 @@ def update_created_at(sender, instance, **kwargs):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    telegram_id = models.CharField(max_length=50, unique=True)
+    chat_id = models.CharField(max_length=50)
+    notify_enabled = models.BooleanField(default=False)
 
     class Meta:
         verbose_name = 'Профиль'

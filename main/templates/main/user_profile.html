@@ -24,7 +24,33 @@
     <div class="task-wrapper">
         <span class="name">Ваше имя: {{ user.username }}</span>
 
-        <button class="connect_btn">Подключить telegram</button>
+        <!--<button class="connect_btn" >Подключить telegram</button>-->
+        <button onclick="connectTelegram()">Подключить Telegram уведомления</button>
+        <script>
+            function connectTelegram() {
+                // Открываем Telegram бота
+                window.open("https://t.me/todoList_notifications_bot?start=connect", "_blank");
+                
+                // Запрашиваем chat_id у пользователя
+                const chatId = prompt("Введите ваш Telegram Chat ID (после запуска бота отправьте ему /id)");
+                
+                if (chatId) {
+                    fetch('/api/enable_notifications/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': '{{ csrf_token }}'
+                        },
+                        body: JSON.stringify({
+                            telegram_id: chatId,
+                            chat_id: chatId
+                        })
+                    }).then(response => {
+                        alert("Уведомления успешно подключены!");
+                    });
+                }
+            }
+            </script>
     </div>
 </body>
 </html>
