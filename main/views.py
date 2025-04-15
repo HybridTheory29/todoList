@@ -13,49 +13,14 @@ from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.utils import timezone
-from rest_framework.decorators import api_view
+from rest_framework.views import APIView
 from rest_framework.response import Response
-import json
 
-@api_view(['POST'])
-def enable_notifications(request):
-    user = request.user
-    data = json.loads(request.body)
-    
-    Profile.objects.update_or_create(
-        user=user,
-        defaults={
-            'telegram_id': data['telegram_id'],
-            'chat_id': data['chat_id'],
-            'notify_enabled': True
-        }
-    )
-    return Response({'status': 'ok'})
-
-@api_view(['GET'])
-def get_overdue_tasks(request):
-    users = Profile.objects.filter(notify_enabled=True)
-    results = {}
-    
-    for tg_user in users:
-        tasks = Task.objects.filter(
-            user=tg_user.user,
-            is_completed=False,
-            due_date__lt=timezone.now(),
-            notified=False
-        ).values('id', 'title', 'due_date')
-        
-        if tasks:
-            results[str(tg_user.telegram_id)] = {
-                'chat_id': tg_user.chat_id,
-                'tasks': list(tasks)
-            }
-            # Помечаем задачи как уведомленные
-            Task.objects.filter(
-                id__in=[t['id'] for t in tasks]
-            ).update(notified=True)
-    
-    return Response(results)
+class OverdueTasksAPIView(APIView):
+    def get(self, request):
+        tasks = Task.objects.filter(complete=False, deadline__lt=timezone.now())
+        data = [{"title": task.title, "deadline": task.deadline} for task in tasks]
+        return Response(data)
 
 def login_view(request):
     if request.method == 'POST':

@@ -33,7 +33,7 @@ class Task(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
     deadline = models.DateTimeField(verbose_name='Срок выполнения', blank=True, null=True)
-    notified = models.BooleanField(default=False)
+    #notified = models.BooleanField(default=False)
 
     def __str__(self):
         return str(self.title)
