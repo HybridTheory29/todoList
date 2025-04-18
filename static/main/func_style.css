@@ -224,7 +224,7 @@
         border: 2px solid #333;
         border-radius: 5px;
         position: absolute;
-        top: 60px;
+        top: 65px;
         left: 17%;
         width: 64%;
         font-size: 16px;
@@ -249,10 +249,9 @@
 
     .card-body .descript {
         height: 125px; 
-        margin-top: 3%;
         margin-bottom: 3%;
         position: absolute;
-        top: 110px;
+        top: 120px;
         left: 17%;
         width: 64%;
         resize: none;
@@ -261,6 +260,18 @@
         position: absolute;
         top: 10%;
     }
+    .card-body .deadline-container{
+        border: 2px solid #333;
+        border-radius: 5px;
+        position: absolute;
+        top: 235px;
+        left: 70px;
+    }
+    .card-body .deadline-input{
+        width: 262px;
+        height: 30px;
+    }
+
     .card-body .ca-titl{
         border: 2px solid #333;
         border-radius: 5px;

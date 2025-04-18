@@ -1,5 +1,5 @@
 from django.contrib.auth import authenticate, login as user_login, logout as user_logout
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404, render, redirect
 from django.template.context_processors import request
 from django.views.generic.list import  ListView
