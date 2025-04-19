@@ -1,4 +1,5 @@
 import requests
+import json
 
 def notify_bot(task):
     url = "http://localhost:8080/notify/"
@@ -6,11 +7,16 @@ def notify_bot(task):
         "title": task.title,
         "deadline": task.deadline.isoformat()
     }
-    headers = {"Authorization": "Bearer секрет"}
-    requests.post(url, json=data, headers=headers, timeout=3)
+    headers = {
+        "Content-Type": "application/json; charset=utf-8",
+        "Authorization": "Bearer секрет"
+    }
     try:
-        response = requests.post(url, json=data, timeout=3)
-        if response.status_code != 200:
-            print(f"Ошибка при отправке: {response.status_code} — {response.text}")
-    except requests.RequestException as e:
-        print(f"Ошибка соединения с ботом: {e}")
+        response = requests.post(
+            "http://localhost:8080/notify/",
+            data=json.dumps(data, ensure_ascii=False).encode("utf-8"),
+            headers=headers
+        )
+        response.raise_for_status()
+    except requests.exceptions.RequestException as e:
+        print("Ошибка при отправке уведомления боту:", e)
