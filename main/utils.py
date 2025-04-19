@@ -1,5 +1,5 @@
-import requests
-import json
+import requests, json
+
 
 def notify_bot(task):
     url = "http://localhost:8080/notify/"
@@ -9,7 +9,7 @@ def notify_bot(task):
     }
     headers = {
         "Content-Type": "application/json; charset=utf-8",
-        "Authorization": "Bearer секрет"
+        "Authorization": "Bearer secret"
     }
     try:
         response = requests.post(

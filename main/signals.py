@@ -7,7 +7,7 @@ from .utils import notify_bot
 @receiver(post_save, sender=Task)
 def check_task_overdue(sender, instance, created, **kwargs):
     if (
-        #not instance.complete and
+        not instance.complete and
         instance.deadline and
         instance.deadline < timezone.now() and
         not instance.is_notified

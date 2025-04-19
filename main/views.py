@@ -18,8 +18,9 @@ from rest_framework.response import Response
 
 class OverdueTasksAPIView(APIView):
     def get(self, request):
-        tasks = Task.objects.filter(complete=False, deadline__lt=timezone.now())
-        data = [{"title": task.title, "deadline": task.deadline} for task in tasks]
+        user_id = request.GET.get('user_id')
+        tasks = Task.objects.filter(user_id=user_id, complete=False, deadline__lt=timezone.now())
+        data = [{"id": user_id, "title": task.title, "deadline": task.deadline, "complete": task.complete} for task in tasks]
         return Response(data)
 
 def login_view(request):
@@ -59,7 +60,15 @@ def logout_view(request):
 
 def user_profile(request, username):
     user = User.objects.get(username=username)
-    context = {"user": user}
+    token_obj, created = TelegramLinkToken.objects.get_or_create(user=request.user)
+
+    if not created and token_obj.is_used:
+        token_obj.token = uuid.uuid4()
+        token_obj.is_used = False
+        token_obj.save()
+    telegram_link = f"https://t.me/TasksStatusBot?start={token_obj.token}"
+
+    context = {"user": user, 'telegram_link': telegram_link}
 
     return render(request, 'main/user_profile.html', context)
 
