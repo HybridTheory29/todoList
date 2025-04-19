@@ -205,3 +205,20 @@ def task_complete(request, category_id, pk):
     task.save()
 
     return redirect(reverse('category_tasks', kwargs={'pk': category_id}))
+
+from django.http import JsonResponse
+
+def telegram_auth_view(request):
+    token = request.GET.get('token')
+    if not token:
+        return JsonResponse({'error': 'No token provided'}, status=400)
+
+    try:
+        token_obj = TelegramLinkToken.objects.get(token=token, is_used=False)
+    except TelegramLinkToken.DoesNotExist:
+        return JsonResponse({'error': 'Invalid token'}, status=404)
+
+    token_obj.is_used = True
+    token_obj.save()
+
+    return JsonResponse({'user_id': token_obj.user.id})

@@ -9,6 +9,7 @@ urlpatterns = [
     path('registration/', reg_view, name='registration'),
     path('', CategoryList.as_view(), name='category-list'),
     path('api/overdue/', OverdueTasksAPIView.as_view(), name='overdue_tasks'),
+    path('api/telegram-auth/', telegram_auth_view, name='telegram-auth'),
     path('profile/<username>', user_profile, name='user_profile'),  
     path('category-create/', CategoryCreate.as_view(), name='category-create'),
     path('category-<int:pk>/', CategoryTasks.as_view(), name='category_tasks'),
