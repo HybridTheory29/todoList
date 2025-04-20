@@ -79,6 +79,7 @@
         cursor: pointer;
         text-decoration: none;
         position: absolute; top: 77%; left: 22%;
+        width: 140px;
     }
 
     .card-body .descript {
@@ -154,6 +155,7 @@
         cursor: pointer;
         text-decoration: none;
         position: absolute; top: 53%; left: 22%;
+        width: 160px;
     }
     .mobile_create-date{
         display: none;
@@ -224,7 +226,7 @@
         border: 2px solid #333;
         border-radius: 5px;
         position: absolute;
-        top: 65px;
+        top: 45px;
         left: 17%;
         width: 64%;
         font-size: 16px;
@@ -240,7 +242,7 @@
         font-size: 14px;
         border-radius: 5px;
         position: absolute;
-        top: 280px;
+        top: 260px;
         left: 17%;
         width: 64%;
         cursor: pointer;
@@ -251,7 +253,7 @@
         height: 125px; 
         margin-bottom: 3%;
         position: absolute;
-        top: 120px;
+        top: 100px;
         left: 17%;
         width: 64%;
         resize: none;
@@ -264,12 +266,15 @@
         border: 2px solid #333;
         border-radius: 5px;
         position: absolute;
-        top: 235px;
-        left: 70px;
+        top: 215px;
+        left: 17%;
+        width: 64%;
     }
     .card-body .deadline-input{
-        width: 262px;
+        width: 100%;
         height: 30px;
+        font-size: 15px;
+        padding: 10px;
     }
 
     .card-body .ca-titl{
@@ -341,7 +346,7 @@
 
     .mobile_create-date{
         position: absolute;
-        top: 15px;
-        left: 71%;
+        top: 315px; left: 25px;
+        font-size: 15px;
     }
 }
