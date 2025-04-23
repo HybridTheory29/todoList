@@ -20,13 +20,19 @@
             <a href="{% url 'login' %}">Войти</a>
         {% endif %}
     </div>
-    <!--{{ user.username }}-->
+    
     <div class="task-wrapper">
-        <span class="name">Ваше имя: {{ user.username }}</span>
+        <div class="user-img">
+            <img src="../static/main/user.png">
+            <span class="name">Ваше имя: {{ user.username }}</span>
+        </div>
 
         <!--<button class="connect_btn" >Подключить telegram</button>-->
-        
-        <a href="{{ telegram_link }}"><button class="btn"><i class='bx bxs-paper-plane'></i>Подключить Telegram</button></a>
+        <div class="tg-link">
+            <a href="{{ telegram_link }}">
+                <button class="btn"><i class='bx bxs-paper-plane'></i>Подключить Telegram</button>
+            </a>
+        </div>
     </div>
 </body>
 </html>

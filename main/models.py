@@ -47,8 +47,8 @@ class Task(models.Model):
         ordering = ['-important', 'complete']
 
 class AuthUser(models.Model):
-    login = models.CharField(max_length=100, unique=True)
-    password = models.CharField(max_length=100)
+    login = models.CharField(max_length=25, unique=True)
+    password = models.CharField(max_length=20)
 
     def __str__(self):
         return self.login
