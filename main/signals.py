@@ -4,6 +4,7 @@ from django.utils import timezone
 from .models import Task
 from .utils import notify_bot
 
+"""
 @receiver(post_save, sender=Task)
 def check_task_overdue(sender, instance, created, **kwargs):
     if (
@@ -15,3 +16,4 @@ def check_task_overdue(sender, instance, created, **kwargs):
         notify_bot(instance)
         instance.is_notified = True
         instance.save(update_fields=['is_notified'])
+"""

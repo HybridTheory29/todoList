@@ -1,6 +1,6 @@
 import requests, json
 
-
+"""
 def notify_bot(task):
     url = "http://localhost:8080/notify/"
     data = {
@@ -20,3 +20,4 @@ def notify_bot(task):
         response.raise_for_status()
     except requests.exceptions.RequestException as e:
         print("Ошибка при отправке уведомления боту:", e)
+"""

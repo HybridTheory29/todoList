@@ -1,11 +1,10 @@
 from django.contrib.auth import authenticate, login as user_login, logout as user_logout
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render, redirect
-from django.template.context_processors import request
 from django.views.generic.list import  ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy, reverse
-from django.utils.timezone import localtime
+from django.http import JsonResponse
 
 from main.models import *
 from main.forms import *
@@ -205,8 +204,6 @@ def task_complete(request, category_id, pk):
     task.save()
 
     return redirect(reverse('category_tasks', kwargs={'pk': category_id}))
-
-from django.http import JsonResponse
 
 def telegram_auth_view(request):
     token = request.GET.get('token')
